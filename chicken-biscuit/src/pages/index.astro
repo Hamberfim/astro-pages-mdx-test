@@ -1,17 +1,26 @@
 ---
-
+import "../../src/styles/global.css";
+const pageTitle = "Astro, Page CMS & MDX";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang="en" class="bg-gray-50 font-sans-serif text-gray-900 ms-3">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <header></header>
+    <nav></nav>
+    <main>
+      <section>
+        <h1>Astro</h1>
+        <h2>An Astro Page CMS site with MDX(jsx)</h2>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
 </html>
