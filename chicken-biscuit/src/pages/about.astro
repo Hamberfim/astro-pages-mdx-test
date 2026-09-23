@@ -24,6 +24,9 @@ const skills = [
   "Digital Marketing/MarTech",
   "Writing Docs",
 ];
+
+const skillColor = "#f7920e";
+const skillFontWt = "bold";
 ---
 
 <html lang="en" class="bg-gray-50 font-sans-serif text-gray-900 ms-3">
@@ -34,6 +37,21 @@ const skills = [
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{tabTitle}</title>
+
+    <style define:vars={{ skillColor, skillFontWt }}>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h1 {
+        font-size: 3rem;
+        color: #221a97;
+      }
+
+      .skill {
+        color: var(--skillColor);
+        font-weight: var(--skillFontWt);
+      }
+    </style>
   </head>
   <body>
     <header></header>
@@ -52,11 +70,11 @@ const skills = [
         <p>{devStory.bio}</p>
         <p>Occupation: {devStory.occupation}</p>
         <p>Core Skills:</p>
-        <ul>{skills.map((skill) => <li>{skill}</li>)}</ul>
+        <ul>{skills.map((skill) => <li class="skill">{skill}</li>)}</ul>
         <p>Hobbies:</p>
         <ul>{devStory.hobbies.map((h) => <li>{h}</li>)}</ul>
         <p>
-          Favorite Colors: {
+          Favorite Color(s): {
             devStory.favColor.length >= 3 && (
               <span>
                 {devStory.favColor[2]} & {devStory.favColor[0]}
