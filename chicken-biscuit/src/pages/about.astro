@@ -1,7 +1,29 @@
 ---
+import { length } from "astro:schema";
+
 const tabTitle = "About - Astro, Page CMS & MDX";
 const mainTitle = "About - Astro, Page CMS & MDX";
 const desc = "";
+
+const devStory = {
+  firstName: "Anthony",
+  country: "United States",
+  occupation: "Web Application Developer & Designer",
+  hobbies: ["reading", "photography & video", "woodworking", "painting"],
+  bio: "I have 7+ years of experience in web application development, graphic design and content management. In the past I created and translated ux/ui concepts and static designs into responsive and dynamically functional websites. In late 2019 I return to DMACC to complete my AAS CIS degree with a focus in programming languages and software engineering. Then Covid hit.",
+  favColor: ["orange", "black", "dark gray", "light gray"],
+};
+const skills = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "React",
+  "Astro",
+  "C# DotNet MVC",
+  "Graphic Design",
+  "Digital Marketing/MarTech",
+  "Writing Docs",
+];
 ---
 
 <html lang="en" class="bg-gray-50 font-sans-serif text-gray-900 ms-3">
@@ -24,8 +46,24 @@ const desc = "";
     <main>
       <section>
         <h1>{mainTitle}</h1>
-        <h2>An Astro, Page CMS site with MDX(jsx)</h2>
-        <p>{desc}</p>
+        <h2>
+          Hi, I'm {devStory.firstName} and I'm from the {devStory.country}.
+        </h2>
+        <p>{devStory.bio}</p>
+        <p>Occupation: {devStory.occupation}</p>
+        <p>Core Skills:</p>
+        <ul>{skills.map((skill) => <li>{skill}</li>)}</ul>
+        <p>Hobbies:</p>
+        <ul>{devStory.hobbies.map((h) => <li>{h}</li>)}</ul>
+        <p>
+          Favorite Colors: {
+            devStory.favColor.length >= 3 && (
+              <span>
+                {devStory.favColor[2]} & {devStory.favColor[0]}
+              </span>
+            )
+          }
+        </p>
       </section>
       <section></section>
     </main>
